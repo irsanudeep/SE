@@ -1,0 +1,81 @@
+<?php
+ob_start();
+session_start();
+require_once 'dbconnect.php';
+
+if (!isset($_SESSION['eeusername'])) {
+    header("Location: loginee.php");
+    exit;
+}
+// select logged in users detail
+$res = $conn->query("SELECT * FROM employeedetails WHERE eeusername='{$_SESSION['eeusername']}'");
+$userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
+
+?>
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Hello,<?php echo $userRow['eeusername']; ?></title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/index.css" type="text/css"/>
+</head>
+<body>
+
+<!-- Navigation Bar-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">FreeLancer</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="dashboardee.php">Home</a></li>
+				<li><a href="newprojects.php">New</a></li>
+                <li><a href="currentprojects.php">Current</a></li>
+                <li><a href="completedprojects.php">Completed</a></li>
+				
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">
+                        <span
+                            class="glyphicon glyphicon-user"></span>&nbsp;Logged
+                        in: <?php echo $userRow['eeusername']; ?>
+                        &nbsp;<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="logoutee.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+<div class="container">
+    <!-- Jumbotron-->
+    <div class="jumbotron">
+        <h1>Hello, <?php echo $userRow['eeusername']; ?></h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at auctor est, in convallis eros. Nulla
+            facilisi. Donec ipsum nulla, hendrerit nec mauris vitae, lobortis egestas tortor. </p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+</body>
+</html>

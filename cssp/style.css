@@ -1,0 +1,94 @@
+﻿input[type=text] {
+    width: 70%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('../images/searchicon.png');
+    background-size: contain;
+    background-position: 5px 2px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+
+input[type=submit] {
+    width: 8%;
+    box-sizing: border-box;
+    border: 2px solid #331f00;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color:#ff9900;
+    font-family:Verdana;
+    background-image: url('../images/Cart.png');
+    background-size: contain;
+    background-position: 5px 2px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    margin-left: 20px;
+}
+div{
+    background-color:#111;
+}
+p{
+    font-size:22px;
+    color:white;
+}
+.dropbtn {
+    color: white;
+    padding: 7px;
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+}
+
+.drop {
+    color: white;
+    padding: 15px;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+#login{
+    text-align:right;
+}
+
+#head{
+    color:white;
+    font-family:"Verdana";
+    font-style: italic;
+    font-size: 40px;
+}
+
+.admin{
+    padding:10px;
+}

@@ -1,0 +1,23 @@
+html,
+
+.wheel-svg {
+  margin-left: 10px;
+}
+.wheel-svg .term {
+  font-family: GothamLight, sans-serif;
+  font-size: 50px;
+  letter-spacing: -1px;
+  fill: #000000;
+  opacity: 0;
+}
+.wheel-svg .term.term03 {
+  opacity: 1;
+}
+.wheel-svg .term.term02,
+.wheel-svg .term.term04 {
+  opacity: 0.5;
+}
+.wheel-svg .term.term01,
+.wheel-svg .term.term05 {
+  opacity: 0.2;
+}
